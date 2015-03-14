@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ionic-in-action/apis",
   "dependencies": {
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "request": "^2.53.0"
   }
 }

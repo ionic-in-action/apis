@@ -1,6 +1,8 @@
 // Require stuff
 var express = require('express');
+var request = require('request');
 var restaurants = require('./data/restaurants');
+var weather = require('./data/weather');
 
 // Some app level variables
 var per_page = 10;
@@ -8,7 +10,7 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // GET restaurants endpoint
-app.get('/api/restaurants', function (req, res) {
+app.get('/restaurants', function (req, res) {
 
   // Get the page value from query or set to 1.
   var page = parseInt(req.query.page) || 1;
@@ -31,6 +33,22 @@ app.get('/api/restaurants', function (req, res) {
 
   // Return the object
   res.json(data);
+});
+
+// GET the weather
+app.get('/weather', function (req, res) {
+  request({
+    url: 'http://api.openweathermap.org/data/2.5/weather?lat=21.873457&lon=-159.453314&units=imperial',
+    timeout: 5000
+  }, function (error, response, body) {
+    if (!error) {
+      // Send back data
+      res.json(body);
+    } else {
+      // Just send back mock weather object since we had problems getting real data
+      res.json(weather);
+    }
+  });
 });
 
 app.listen(port);
