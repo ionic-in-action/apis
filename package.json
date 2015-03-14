@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/ionic-in-action/apis/issues"
   },
+  "engines": {
+    "node": "0.12.x"
+  },
   "homepage": "https://github.com/ionic-in-action/apis",
   "dependencies": {
     "express": "^4.12.2"
