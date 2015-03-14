@@ -9,6 +9,13 @@ var per_page = 10;
 var app = express();
 var port = process.env.PORT || 8080;
 
+// Support CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // GET restaurants endpoint
 app.get('/restaurants', function (req, res) {
 
