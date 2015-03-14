@@ -1,0 +1,23 @@
+{
+  "name": "ionic-in-action-apis",
+  "version": "1.0.0",
+  "description": "Sample APIs for the Ionic in Action book",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-in-action/apis.git"
+  },
+  "author": "Jeremy Wilken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionic-in-action/apis/issues"
+  },
+  "homepage": "https://github.com/ionic-in-action/apis",
+  "dependencies": {
+    "express": "^4.12.2"
+  }
+}
