@@ -11,8 +11,9 @@ var port = process.env.PORT || 8080;
 
 // Support CORS
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Content-Type', 'application/json')
   next();
 });
 
@@ -50,7 +51,7 @@ app.get('/weather', function (req, res) {
   }, function (error, response, body) {
     if (!error) {
       // Send back data
-      res.json(body);
+      res.send(body);
     } else {
       // Just send back mock weather object since we had problems getting real data
       res.json(weather);
