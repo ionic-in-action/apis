@@ -46,7 +46,7 @@ app.get('/restaurants', function (req, res) {
 // GET the weather
 app.get('/weather', function (req, res) {
   request({
-    url: 'http://api.openweathermap.org/data/2.5/weather?lat=21.873457&lon=-159.453314&units=imperial',
+    url: 'http://api.openweathermap.org/data/2.5/weather?lat=21.873457&lon=-159.453314&units=imperial&APPID=' + process.env.OPENMAP_KEY,
     timeout: 5000
   }, function (error, response, body) {
     if (!error) {
